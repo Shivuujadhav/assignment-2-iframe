@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" type="text/css" href="./css/bootstrap.min.css">
+    <title>Video Playlist</title>
+</head>
+<body>
+    <header>
+      <nav class="background-color">
+        <div class="name">
+           <h3>VideoPlaylist</h3> 
+        </div>
+        <div class="contents">
+            <ul type="none">
+               <li><a href="#home">Home</a></li>
+               <li><a href="#shorts">Shorts</a></li>
+               <li><a href="#History">History</a></li>
+               <li><a href="#You">You</a></li>
+            </ul>   
+          
+        </div>
+        <div class="search-bar">
+               <input type="text" name="search" id="search">
+         <button class="btn btn-sm">Search</button>
+        </div>
+     </nav>
+    </header>
+    <main>
+        <div class="video-list">
+            <div class="video-thumbnail" data-src="https://www.youtube.com/embed/PXsH5J8ca_Y">
+                <img src="https://img.youtube.com/vi/PXsH5J8ca_Y/default.jpg" alt="Thumbnail 1">
+                <p>मानवी शरीर आणि अंतरेन्द्रिये</p>
+            </div>
+            <div class="video-thumbnail" data-src="https://www.youtube.com/embed/6PvmlFqlOWw">
+                <img src="https://img.youtube.com/vi/6PvmlFqlOWw/default.jpg" alt="Thumbnail 2">
+                <p>संख्याज्ञान</p>
+            </div>
+            <!--<div class="video-thumbnail" data-src="https://www.youtube.com/embed/PXsH5J8ca_Y">
+              <img src="https://img.youtube.com/vi/PXsH5J8ca_Y/default.jpg" alt="Thumbnail 3">
+              <!--<p>मानवी शरीर आणि अंतरेन्द्रिये</p>-->
+          <!--</div>
+          <div class="video-thumbnail" data-src="https://www.youtube.com/embed/6PvmlFqlOWw">
+            <img src="https://img.youtube.com/vi/6PvmlFqlOWw/default.jpg" alt="Thumbnail 4">
+            <p>संख्याज्ञान</p>
+        </div>
+            <!-- Add more video thumbnails here -->
+        </div>
+        <div class="video-player">
+            <iframe id="video-frame" width="560" height="315" src="" frameborder="0" allowfullscreen></iframe>
+            <div id="video-details">
+                <!--<h2>Video Title</h2>
+                <p>Video Description</p>-->
+            </div>
+            <div id="video-details 2">
+              <!--<h2>Video Title</h2>
+              <p>Video Description</p>-->
+          </div>
+        </div>
+    </main>
+    <footer>
+      <div class="footer-content">
+        <!--<p>Contact Us:</p>-->
+        <ul>
+          <h3>Contact Us:</h3><br>
+          <li>Email: example@example.com</li>
+          <li>Phone: +123456789</li>
+          <li>Address: 123 Street, City, Country</li>
+        </ul>
+      </div><br>
+      <div class="footer-bottom">
+        <p>&copy; 2022 Your Website. All rights reserved.</p>
+      </div>
+    </footer>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+    const videoThumbnails = document.querySelectorAll('.video-thumbnail');
+    const videoFrame = document.getElementById('video-frame');
+    const videoDetails = document.getElementById('video-details');
+
+    videoThumbnails.forEach(thumbnail => {
+        thumbnail.addEventListener('click', function() {
+            const videoSrc = this.getAttribute('data-src');
+            const videoTitle = this.querySelector('p').innerText;
+            videoFrame.src = videoSrc;
+            videoDetails.innerHTML = `<h2>${videoTitle}</h2>`;
+            //videoDetails2.innerHTML = `<h2>${videoTitle}</h2><p style="font-size: small;">आठवीं गणित </p>`;
+        });
+    });
+});
+
+    </script>
+</body>
+</html>
